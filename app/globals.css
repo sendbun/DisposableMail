@@ -1,0 +1,414 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body {
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+}
+
+@layer base {
+  :root {
+    --background: 0 0% 100%;
+    --foreground: 222.2 84% 4.9%;
+    --card: 0 0% 100%;
+    --card-foreground: 222.2 84% 4.9%;
+    --popover: 0 0% 100%;
+    --popover-foreground: 222.2 84% 4.9%;
+    --primary: 221.2 83.2% 53.3%;
+    --primary-foreground: 210 40% 98%;
+    --secondary: 210 40% 96%;
+    --secondary-foreground: 222.2 84% 4.9%;
+    --muted: 210 40% 96%;
+    --muted-foreground: 215.4 16.3% 46.9%;
+    --accent: 210 40% 96%;
+    --accent-foreground: 222.2 84% 4.9%;
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 210 40% 98%;
+    --border: 214.3 31.8% 91.4%;
+    --input: 214.3 31.8% 91.4%;
+    --ring: 221.2 83.2% 53.3%;
+    --radius: 0.5rem;
+    --chart-1: 12 76% 61%;
+    --chart-2: 173 58% 39%;
+    --chart-3: 197 37% 24%;
+    --chart-4: 43 74% 66%;
+    --chart-5: 27 87% 67%;
+    --sidebar-background: 0 0% 98%;
+    --sidebar-foreground: 240 5.3% 26.1%;
+    --sidebar-primary: 240 5.9% 10%;
+    --sidebar-primary-foreground: 0 0% 98%;
+    --sidebar-accent: 240 4.8% 95.9%;
+    --sidebar-accent-foreground: 240 5.9% 10%;
+    --sidebar-border: 220 13% 91%;
+    --sidebar-ring: 217.2 91.2% 59.8%;
+  }
+  .dark {
+    --background: 222.2 84% 4.9%;
+    --foreground: 210 40% 98%;
+    --card: 222.2 84% 4.9%;
+    --card-foreground: 210 40% 98%;
+    --popover: 222.2 84% 4.9%;
+    --popover-foreground: 210 40% 98%;
+    --primary: 217.2 91.2% 59.8%;
+    --primary-foreground: 222.2 84% 4.9%;
+    --secondary: 217.2 32.6% 17.5%;
+    --secondary-foreground: 210 40% 98%;
+    --muted: 217.2 32.6% 17.5%;
+    --muted-foreground: 215 20.2% 65.1%;
+    --accent: 217.2 32.6% 17.5%;
+    --accent-foreground: 210 40% 98%;
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 210 40% 98%;
+    --border: 217.2 32.6% 17.5%;
+    --input: 217.2 32.6% 17.5%;
+    --ring: 224.3 76.3% 94.1%;
+    --chart-1: 220 70% 50%;
+    --chart-2: 160 60% 45%;
+    --chart-3: 30 80% 55%;
+    --chart-4: 280 65% 60%;
+    --chart-5: 340 75% 55%;
+    --sidebar-background: 240 5.9% 10%;
+    --sidebar-foreground: 240 4.8% 95.9%;
+    --sidebar-primary: 224.3 76.3% 48%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 240 3.7% 15.9%;
+    --sidebar-accent-foreground: 240 4.8% 95.9%;
+    --sidebar-border: 240 3.7% 15.9%;
+    --sidebar-ring: 217.2 91.2% 59.8%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-background text-foreground;
+  }
+}
+
+/* Email content styles with proper theme support */
+.email-content {
+  @apply text-sm leading-relaxed text-foreground;
+  color: hsl(var(--foreground));
+}
+
+.email-content * {
+  color: inherit;
+}
+
+.email-content img {
+  @apply max-w-full h-auto rounded;
+}
+
+.email-content table {
+  @apply w-full border-collapse;
+}
+
+.email-content td,
+.email-content th {
+  @apply border border-border p-2;
+  border-color: hsl(var(--border));
+}
+
+.email-content a {
+  @apply underline;
+  color: hsl(var(--primary));
+}
+
+.email-content a:hover {
+  color: hsl(var(--primary) / 0.8);
+}
+
+.email-content p {
+  @apply mb-2;
+  color: hsl(var(--foreground));
+}
+
+.email-content h1,
+.email-content h2,
+.email-content h3,
+.email-content h4,
+.email-content h5,
+.email-content h6 {
+  @apply font-semibold mb-2;
+  color: hsl(var(--foreground));
+}
+
+.email-content ul,
+.email-content ol {
+  @apply pl-4 mb-2;
+}
+
+.email-content li {
+  @apply mb-1;
+  color: hsl(var(--foreground));
+}
+
+.email-content blockquote {
+  @apply border-l-4 pl-4 italic;
+  border-color: hsl(var(--border));
+  color: hsl(var(--muted-foreground));
+}
+
+.email-content strong,
+.email-content b {
+  @apply font-semibold;
+  color: hsl(var(--foreground));
+}
+
+.email-content em,
+.email-content i {
+  @apply italic;
+  color: hsl(var(--foreground));
+}
+
+.email-content code {
+  @apply bg-muted px-1 py-0.5 rounded text-xs font-mono;
+  background-color: hsl(var(--muted));
+  color: hsl(var(--foreground));
+}
+
+.email-content pre {
+  @apply bg-muted p-4 rounded overflow-x-auto;
+  background-color: hsl(var(--muted));
+  color: hsl(var(--foreground));
+}
+
+.email-content pre code {
+  @apply bg-transparent p-0;
+  background-color: transparent;
+}
+
+/* Modal scrollbar styles */
+.overflow-auto::-webkit-scrollbar {
+  width: 8px;
+}
+
+.overflow-auto::-webkit-scrollbar-track {
+  background: hsl(var(--muted));
+  border-radius: 4px;
+}
+
+.overflow-auto::-webkit-scrollbar-thumb {
+  background: hsl(var(--muted-foreground));
+  border-radius: 4px;
+}
+
+.overflow-auto::-webkit-scrollbar-thumb:hover {
+  background: hsl(var(--foreground));
+}
+
+/* Dialog content specific styles */
+.dialog-content .email-content {
+  @apply text-foreground;
+  color: hsl(var(--foreground)) !important;
+}
+
+.dialog-content .prose {
+  @apply text-foreground;
+  color: hsl(var(--foreground)) !important;
+}
+
+.dialog-content .prose * {
+  color: inherit;
+}
+
+.dialog-content .prose h1,
+.dialog-content .prose h2,
+.dialog-content .prose h3,
+.dialog-content .prose h4,
+.dialog-content .prose h5,
+.dialog-content .prose h6 {
+  @apply text-foreground;
+  color: hsl(var(--foreground)) !important;
+}
+
+.dialog-content .prose p {
+  @apply text-foreground;
+  color: hsl(var(--foreground)) !important;
+}
+
+.dialog-content .prose strong {
+  @apply text-foreground;
+  color: hsl(var(--foreground)) !important;
+}
+
+.dialog-content .prose a {
+  @apply text-primary;
+  color: hsl(var(--primary)) !important;
+}
+
+.dialog-content .prose a:hover {
+  @apply text-primary/80;
+  color: hsl(var(--primary) / 0.8) !important;
+}
+
+/* Override any Tailwind prose defaults that might conflict */
+.dialog-content .prose {
+  --tw-prose-body: hsl(var(--foreground));
+  --tw-prose-headings: hsl(var(--foreground));
+  --tw-prose-links: hsl(var(--primary));
+  --tw-prose-bold: hsl(var(--foreground));
+  --tw-prose-counters: hsl(var(--muted-foreground));
+  --tw-prose-bullets: hsl(var(--muted-foreground));
+  --tw-prose-hr: hsl(var(--border));
+  --tw-prose-quotes: hsl(var(--foreground));
+  --tw-prose-quote-borders: hsl(var(--border));
+  --tw-prose-captions: hsl(var(--muted-foreground));
+  --tw-prose-code: hsl(var(--foreground));
+  --tw-prose-pre-code: hsl(var(--foreground));
+  --tw-prose-pre-bg: hsl(var(--muted));
+  --tw-prose-th-borders: hsl(var(--border));
+  --tw-prose-td-borders: hsl(var(--border));
+}
+
+/* Force override prose text colors */
+.dialog-content .prose,
+.dialog-content .prose *,
+.dialog-content .prose p,
+.dialog-content .prose div,
+.dialog-content .prose span,
+.dialog-content .prose h1,
+.dialog-content .prose h2,
+.dialog-content .prose h3,
+.dialog-content .prose h4,
+.dialog-content .prose h5,
+.dialog-content .prose h6,
+.dialog-content .prose li,
+.dialog-content .prose td,
+.dialog-content .prose th {
+  color: hsl(var(--foreground)) !important;
+}
+
+/* Specific override for links */
+.dialog-content .prose a {
+  color: hsl(var(--primary)) !important;
+}
+
+.dialog-content .prose a:hover {
+  color: hsl(var(--primary) / 0.8) !important;
+}
+
+/* Override for code elements */
+.dialog-content .prose code {
+  color: hsl(var(--foreground)) !important;
+  background-color: hsl(var(--muted)) !important;
+}
+
+.dialog-content .prose pre {
+  background-color: hsl(var(--muted)) !important;
+}
+
+.dialog-content .prose pre code {
+  color: hsl(var(--foreground)) !important;
+  background-color: transparent !important;
+}
+
+/* Dark theme specific overrides */
+.dark .dialog-content .prose,
+.dark .dialog-content .prose *,
+.dark .dialog-content .prose p,
+.dark .dialog-content .prose div,
+.dark .dialog-content .prose span,
+.dark .dialog-content .prose h1,
+.dark .dialog-content .prose h2,
+.dark .dialog-content .prose h3,
+.dark .dialog-content .prose h4,
+.dark .dialog-content .prose h5,
+.dark .dialog-content .prose h6,
+.dark .dialog-content .prose li,
+.dark .dialog-content .prose td,
+.dark .dialog-content .prose th {
+  color: hsl(var(--foreground)) !important;
+}
+
+.dark .dialog-content .prose a {
+  color: hsl(var(--primary)) !important;
+}
+
+.dark .dialog-content .prose a:hover {
+  color: hsl(var(--primary) / 0.8) !important;
+}
+
+.dark .dialog-content .prose code {
+  color: hsl(var(--foreground)) !important;
+  background-color: hsl(var(--muted)) !important;
+}
+
+.dark .dialog-content .prose pre {
+  background-color: hsl(var(--muted)) !important;
+}
+
+.dark .dialog-content .prose pre code {
+  color: hsl(var(--foreground)) !important;
+  background-color: transparent !important;
+}
+
+/* Email modal content specific styles */
+.email-modal-content {
+  color: hsl(var(--foreground)) !important;
+}
+
+.email-modal-content * {
+  color: hsl(var(--foreground)) !important;
+}
+
+.email-modal-content a {
+  color: hsl(var(--primary)) !important;
+}
+
+.email-modal-content a:hover {
+  color: hsl(var(--primary) / 0.8) !important;
+}
+
+.email-modal-content code {
+  color: hsl(var(--foreground)) !important;
+  background-color: hsl(var(--muted)) !important;
+}
+
+.email-modal-content pre {
+  background-color: hsl(var(--muted)) !important;
+}
+
+.email-modal-content pre code {
+  color: hsl(var(--foreground)) !important;
+  background-color: transparent !important;
+}
+
+/* Dark theme specific overrides */
+.dark .email-modal-content {
+  color: hsl(var(--foreground)) !important;
+}
+
+.dark .email-modal-content * {
+  color: hsl(var(--foreground)) !important;
+}
+
+.dark .email-modal-content a {
+  color: hsl(var(--primary)) !important;
+}
+
+.dark .email-modal-content a:hover {
+  color: hsl(var(--primary) / 0.8) !important;
+}
+
+.dark .email-modal-content code {
+  color: hsl(var(--foreground)) !important;
+  background-color: hsl(var(--muted)) !important;
+}
+
+.dark .email-modal-content pre {
+  background-color: hsl(var(--muted)) !important;
+}
+
+.dark .email-modal-content pre code {
+  color: hsl(var(--foreground)) !important;
+  background-color: transparent !important;
+}
