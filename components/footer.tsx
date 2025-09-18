@@ -1,7 +1,8 @@
 "use client"
 
 import Link from "next/link"
-import { Mail, Twitter, Github, Linkedin, Globe } from "lucide-react"
+import { Twitter, Github, Linkedin, Globe } from "lucide-react"
+import Image from "next/image"
 import { useTranslations, useLocale } from 'next-intl'
 import { 
   DropdownMenu, 
@@ -38,8 +39,7 @@ export function Footer() {
         <div className="grid grid-cols-1 md:grid-cols-5 gap-8">
           <div className="space-y-4">
             <div className="flex items-center space-x-2">
-              <Mail className="h-6 w-6" />
-              <span className="font-bold text-xl">{t('footer.title')}</span>
+              <Image src="/logo.png" alt="Logo" width={118} height={48} />
             </div>
             <p className="text-sm text-muted-foreground">
               {t('footer.description')}
@@ -97,22 +97,22 @@ export function Footer() {
             <h3 className="font-semibold mb-4">{t('footer.company')}</h3>
             <ul className="space-y-2 text-sm">
               <li>
-                <Link href="#" className="text-muted-foreground hover:text-primary">
+                <Link href={`/${locale}/about`} className="text-muted-foreground hover:text-primary">
                   {t('footer.about')}
                 </Link>
               </li>
               <li>
-                <Link href="#" className="text-muted-foreground hover:text-primary">
+                <Link href={`/${locale}/privacy`} className="text-muted-foreground hover:text-primary">
                   {t('footer.privacyPolicy')}
                 </Link>
               </li>
               <li>
-                <Link href="#" className="text-muted-foreground hover:text-primary">
+                <Link href={`/${locale}/terms`} className="text-muted-foreground hover:text-primary">
                   {t('footer.termsOfService')}
                 </Link>
               </li>
               <li>
-                <Link href="#" className="text-muted-foreground hover:text-primary">
+                <Link href={`/${locale}/contact`} className="text-muted-foreground hover:text-primary">
                   {t('footer.contact')}
                 </Link>
               </li>

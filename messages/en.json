@@ -27,7 +27,6 @@
     "title": "TempMail"
   },
   "footer": {
-    "title": "TempMail",
     "description": "Secure, anonymous temporary email addresses for your privacy and protection.",
     "features": "Features",
     "services": "Services",
@@ -174,6 +173,24 @@
     "read": "Read",
     "unread": "Unread",
     "noContent": "No content available"
+  },
+  "pages": {
+    "about": {
+      "title": "About Us",
+      "body": "We build privacy-first temporary email tools to help you stay safe online. Our service focuses on simplicity, speed and data minimization."
+    },
+    "privacy": {
+      "title": "Privacy Policy",
+      "body": "We do not require registration. Temporary emails and related data are removed automatically per feature rules. Do not use the service for illegal activities."
+    },
+    "terms": {
+      "title": "Terms of Service",
+      "body": "By using this service you agree to use it responsibly. The service is provided as-is without warranties. Availability is not guaranteed."
+    },
+    "contact": {
+      "title": "Contact",
+      "body": "Questions or feedback? Get in touch via our contact form or support email."
+    }
   },
   "fiveMinEmail": {
     "title": "5-Minute Temporary Email",

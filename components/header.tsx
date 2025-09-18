@@ -2,6 +2,7 @@
 
 import { useState } from "react"
 import Link from "next/link"
+import Image from "next/image"
 import { Button } from "@/components/ui/button"
 import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet"
 import { Menu, Moon, Sun, Mail, Inbox } from "lucide-react"
@@ -28,8 +29,7 @@ export function Header() {
     <header className="sticky top-0 z-50 w-full border-b bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60">
       <div className="w-full max-w-[1400px] mx-auto flex h-16 items-center justify-between">
         <Link href={`/${locale}`} className="flex items-center space-x-2">
-          <Mail className="h-6 w-6" />
-          <span className="font-bold text-xl">{t('header.title')}</span>
+          <Image src="/logo.png" alt="Logo" width={118} height={48} />
         </Link>
 
         {/* Desktop Navigation */}

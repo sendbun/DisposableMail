@@ -27,7 +27,6 @@
     "title": "TempMail"
   },
   "footer": {
-    "title": "TempMail",
     "description": "Direcciones de correo temporal seguras y anónimas para tu privacidad y protección.",
     "features": "Características",
     "services": "Servicios",
@@ -174,6 +173,24 @@
     "read": "Leído",
     "unread": "No leído",
     "noContent": "No hay contenido disponible"
+  },
+  "pages": {
+    "about": {
+      "title": "Acerca de Nosotros",
+      "body": "Construimos herramientas de email temporal centradas en la privacidad para mantenerte seguro en línea. Nuestro servicio se enfoca en simplicidad, velocidad y minimización de datos."
+    },
+    "privacy": {
+      "title": "Política de Privacidad",
+      "body": "No requerimos registro. Los emails temporales y datos relacionados se eliminan automáticamente según las reglas de la función. No uses el servicio para actividades ilegales."
+    },
+    "terms": {
+      "title": "Términos de Servicio",
+      "body": "Al usar este servicio aceptas usarlo de manera responsable. El servicio se proporciona tal cual, sin garantías. La disponibilidad no está garantizada."
+    },
+    "contact": {
+      "title": "Contacto",
+      "body": "¿Preguntas o comentarios? Ponte en contacto a través de nuestro formulario de contacto o correo de soporte."
+    }
   },
   "fiveMinEmail": {
     "title": "Email Temporal de 5 Minutos",
