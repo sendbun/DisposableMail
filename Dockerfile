@@ -1,5 +1,5 @@
 # Step 1: Use the official Node.js image as the base image
-FROM node:22-alpine AS build
+FROM node:22.23.4-alpine AS build
 
 # Step 2: Install OpenSSL and other required dependencies
 RUN apk add --no-cache openssl
@@ -23,7 +23,7 @@ COPY . .
 RUN pnpm run build
 
 # Step 8: Create a new stage for the final image
-FROM node:22-alpine AS production
+FROM node:22.23.4-alpine AS production
 
 # Step 9: Install OpenSSL
 RUN apk add --no-cache openssl
